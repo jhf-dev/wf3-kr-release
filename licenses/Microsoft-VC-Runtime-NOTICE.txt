@@ -1,0 +1,14 @@
+Microsoft Visual C++ Runtime redistributable notice
+
+This package includes Microsoft Visual C++ Runtime binaries required by the
+bundled Windows CPython runtime:
+
+- _runtime/python/vcruntime140.dll
+- _runtime/python/vcruntime140_1.dll
+
+These files are not open-source components. Redistribution is governed by
+Microsoft Visual Studio / Visual C++ Redistributable license terms.
+
+Reference:
+- https://learn.microsoft.com/cpp/windows/redistributing-visual-cpp-files
+- https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist

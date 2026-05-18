@@ -1,0 +1,27 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# Local logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Local extraction or staging folders
+extracted/
+tmp/
+temp/
+staging/
+
+# Fork and IDE workspace metadata
+.idea/
+.vscode/
+
+# Keep release artifacts tracked intentionally.
+!wind3-korean-patch-*.zip

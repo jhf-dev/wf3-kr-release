@@ -1,0 +1,48 @@
+Wind Fantasy 3 Korean Patch Release
+Third-Party Notices
+
+This notice is based on the public release package after Python runtime pruning.
+
+The package is not a copy of Wind Fantasy 3 and does not include WIND3.EXE or a full original game installation. Wind Fantasy 3 game assets, text, marks, and media remain the property of their respective rightsholders.
+
+Bundled components:
+- CPython 3.11.8 runtime and selected standard library modules
+  License: Python Software Foundation License
+  Source: https://www.python.org/
+  License text: licenses/CPython-3.11.8-LICENSE.txt
+
+- OpenSSL 3.0.13 libcrypto
+  License: Apache License 2.0
+  Source: https://www.openssl.org/
+  License text: licenses/OpenSSL-3.0.13-LICENSE.txt
+  Used indirectly by Python hashlib/_hashlib for SHA-256 hashing.
+
+- libffi
+  License: MIT-style libffi license
+  Source: https://sourceware.org/libffi/
+  License text: licenses/libffi-LICENSE.txt
+
+- Microsoft Visual C++ Runtime
+  License: Microsoft redistributable runtime terms
+  Source: Microsoft Visual C++ Redistributable
+  Notice: licenses/Microsoft-VC-Runtime-NOTICE.txt
+  Note: this is a redistributable binary dependency, not an open-source component.
+
+- Pretendard
+  License: SIL Open Font License 1.1
+  Source: https://github.com/orioncactus/pretendard
+  License text: licenses/Pretendard-OFL-1.1-LICENSE.txt
+  Package note: Pretendard font files are not bundled and the launcher does not require Pretendard to be installed on the user's PC; generated bitmap glyph patches may be derived from Pretendard installed in the build environment.
+  Reserved Font Name: Pretendard
+
+- Source Han Serif / Noto Serif CJK
+  License: SIL Open Font License 1.1
+  Source: https://github.com/adobe-fonts/source-han-serif
+  License text: licenses/SourceHanSerif-OFL-1.1-LICENSE.txt
+  Package note: Source Han Serif / Noto Serif CJK font files are not bundled; some generated Korean image resources were rendered from this font family during production.
+
+Distribution notes:
+- d3d9.dll shim, release worker scripts, memory patch helper executables, runtime maps, raw-byte tasks, module patch metadata, and W3BP2 patch files are project-specific Korean patch application artifacts.
+- These project-specific artifacts do not currently carry a separate open-source license grant.
+- Translation strings and patch data may contain information derived from Wind Fantasy 3 resources and are provided only for applying the Korean patch to a legitimately owned local installation.
+- See repository LICENSES.md for the broader GitHub-facing rights and attribution notice.
