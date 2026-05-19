@@ -6,15 +6,17 @@ Wind Fantasy 3 한국어 패치 배포 전용 저장소입니다.
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260519-v5.zip`
-- SHA-256: `F3E08D1A29900A7A663475919EB617B335CD5D12F0AB85ECABDC6724D948E234`
-- 파일 크기: `18,931,028` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260519-v6.zip`
+- SHA-256: `C49A4443C1CED51ADD0778A708E0AE67AC740603F7FD182769602280E0577872`
+- 파일 크기: `18,931,489` bytes
 - 체크섬 파일: `SHA256SUMS.txt`
 - 주요 변경사항: [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - 버전명 정책: [VERSIONING.md](VERSIONING.md)
 
 ## 이번 릴리즈
 
+- 캐릭터 정보창 기본/장비 라벨 표기 추가 보강
+- 다른 PC 문제 확인을 위한 진단 로그 수집 범위 확대
 - 캐릭터 정보창 스탯 표기 복구
 - 다른 PC에서 런타임 DLL이 로드되지 않을 가능성을 줄이도록 `d3d9.dll` 의존성 축소
 - 원격 환경 문제 확인을 위한 `진단 정보 저장` 기능 추가
@@ -27,7 +29,7 @@ Wind Fantasy 3 한국어 패치 배포 전용 저장소입니다.
 
 ## 사용 방법
 
-1. `wind3-korean-patch-beta-20260519-v5.zip`을 다운로드합니다.
+1. `wind3-korean-patch-beta-20260519-v6.zip`을 다운로드합니다.
 2. 원하는 위치에 압축을 풉니다.
 3. 압축을 푼 폴더에서 `Wind3 Korean Patch Launcher.vbs`를 실행합니다.
 4. 런처에서 `WIND3.EXE`가 있는 Wind Fantasy 3 설치 폴더를 선택합니다.
