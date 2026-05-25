@@ -1,12 +1,27 @@
-# 릴리즈 노트 (beta-20260520-v1)
+# 릴리즈 노트 (beta-20260526-v1)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260520-v1.zip`
-- SHA-256: `0EB99653F6B99FC269DC40931021D492A350F450261FF40D6A262F99767C8A03`
-- 파일 크기: `18,953,478` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260526-v1.zip`
+- SHA-256: `E761E21DD954B4A50D23926061D9FD551A2AFEF864E1D630177B90C0D861ADE6`
+- 파일 크기: `18,954,631` bytes
 
 ## 주요 변경사항
+
+* 아이템 텍스트 확장 경로 배포 반영
+  - 2026-05-24~25 라이브에서 확인한 아이템 이름과 설명 확장 surface를 durable source, 빌드 DLL, launcher asset, release ZIP 검증 경로로 승격했습니다.
+  - `FUN_0050E800` item Name SetString 경로와 `FUN_004F0E40` description/control 경로를 분리해 검증합니다.
+  - 전투 도구 메뉴 row는 item Name 전체가 아니라 count suffix를 포함한 composed row surface로 별도 기록합니다.
+
+* 설명 확장 padded old-byte 보강
+  - `암살자의복장`, `가이아투구`, `풍마닌복`, `풍마닌화`, `적동검`, `육각강전`, `대인전추` 등 확인된 surface의 full old/new bytes를 marker로 고정했습니다.
+  - live log에서 확인된 trailing space padding을 임의로 trim하지 않고 exact-byte variant로 보존했습니다.
+  - release ZIP 재구성, final bundle, launcher asset 검증에서 `239` marker를 확인합니다.
+
+* 패키지 검증 게이트 강화
+  - clean/temp install 검증에서 `status -> apply -> status -> apply -> save-apply -> save-restore -> restore` 순서를 통과했습니다.
+  - 배포 패키지 적용 후 `d3d9.dll` SHA-256은 `42D952D72464C88B4ED0A3770E44141080F37198F0B1FCCD7B9725B6F3739474`입니다.
+  - 이번 릴리즈는 pre-release이며, 다른 PC에서의 packaged visual proof는 아직 별도 확인 대상입니다.
 
 * 창모드 멀티태스킹 개선
   - 전체 창모드와 창 모드에서 Alt+Tab 이후 작업표시줄 뒤로 밀리는 문제를 줄이고, 활성 상태에서만 topmost가 유지되도록 조정했습니다.

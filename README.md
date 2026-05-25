@@ -6,15 +6,19 @@ Wind Fantasy 3 한국어 패치 배포 전용 저장소입니다.
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260520-v1.zip`
-- SHA-256: `0EB99653F6B99FC269DC40931021D492A350F450261FF40D6A262F99767C8A03`
-- 파일 크기: `18,953,478` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260526-v1.zip`
+- SHA-256: `E761E21DD954B4A50D23926061D9FD551A2AFEF864E1D630177B90C0D861ADE6`
+- 파일 크기: `18,954,631` bytes
 - 체크섬 파일: `SHA256SUMS.txt`
 - 주요 변경사항: [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - 버전명 정책: [VERSIONING.md](VERSIONING.md)
 
 ## 이번 릴리즈
 
+- 아이템 이름 확장과 아이템 설명 확장 실험에서 확인된 exact-byte 경로를 배포 DLL과 패키지 검증 경로에 반영했습니다.
+- `암살자의복장`, `가이아투구`, `풍마닌복`, `풍마닌화`, `적동검`, `육각강전`, `대인전추` 등 확인된 설명 확장 surface의 full old/new byte marker 검증을 추가했습니다.
+- release ZIP 재구성, launcher asset, clean/temp install apply/restore 게이트에서 `239`개 marker 검증을 통과한 패키지입니다.
+- 이번 배포는 pre-release이며, cross-PC packaged visual proof는 아직 별도 확인이 필요합니다.
 - 전체 창모드와 창 모드에서 Alt+Tab 전환, 마우스 점유 해제, 포커스 복귀 보정을 개선했습니다.
 - 게임 비활성 상태에서도 화면 갱신이 멈추지 않도록 하는 런타임 옵션을 기본 패키지에 포함했습니다.
 - 런처의 해상도 설정을 정리해 전체 창모드, 창 모드, 독점 전체화면을 선택할 수 있게 했습니다.
@@ -44,7 +48,7 @@ Wind Fantasy 3 한국어 패치 배포 전용 저장소입니다.
 
 ## 사용 방법
 
-1. `wind3-korean-patch-beta-20260520-v1.zip`을 다운로드합니다.
+1. `wind3-korean-patch-beta-20260526-v1.zip`을 다운로드합니다.
 2. 원하는 위치에 압축을 풉니다.
 3. 압축을 푼 폴더에서 `Wind3 Korean Patch Launcher.vbs`를 실행합니다.
 4. 런처에서 `WIND3.EXE`가 있는 Wind Fantasy 3 설치 폴더를 선택합니다.
