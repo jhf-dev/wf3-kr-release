@@ -20,7 +20,6 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 - 전투 HUD의 `賽連軍` 라벨이 `세이렌군`으로 표시되도록 `PersonName` engine rewrite 경로를 보강했습니다.
 - 복원/세이브 패치 BOM 처리, 배포 백엔드 로그 인코딩, shop description getter, 인물/직업/월드맵/세이브 보정 경로를 최신 패키지 기준으로 누적 반영했습니다.
 - 기존 pre-release 변경사항(`beta-20260526-v1`, `beta-20260602-v1/v2/v3`)을 포함한 누적 베타입니다.
-- 이번 배포는 pre-release입니다.
 
 ## 사용 방법
 
