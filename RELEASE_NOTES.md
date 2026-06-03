@@ -1,10 +1,23 @@
-# 릴리즈 노트 (beta-20260604-v1)
+# 릴리즈 노트 (beta-20260604-v2)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260604-v1.zip`
-- SHA-256: `BCF78FC462E07E2A6C3221B3EC970B0E85D5C796705772D8BFB29CB8E8CD58F2`
-- 파일 크기: `22,768,592` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260604-v2.zip`
+- SHA-256: `520EC5EAEB8FCD8F07EF8B8A29FAA8227288CEBB7BF777ABC5FE51960E4E5538`
+- 파일 크기: `22,767,192` bytes
+
+## beta-20260604-v1 대비 변경사항
+
+* 진단 로그 명령줄 노출 완화
+  - `진단 정보 저장`이 Windows Application 이벤트 로그를 수집할 때 `CmdLine` / `CommandLine` 원문을 `<redacted>`로 가립니다.
+  - 로컬 검증이나 채팅 도구가 남긴 reflection 검사 명령이 이벤트 로그에 있어도 진단 파일에 그대로 복사되지 않도록 했습니다.
+  - `Assembly]::LoadFile`, `GetAssignableInputKeyOptions`, `IsAssignableInputKeyName`가 들어간 로컬 reflection 검증 이벤트는 진단 로그에서 제외합니다.
+  - 이 변경은 런처가 해당 PowerShell 명령을 실행한다는 의미가 아니라, 외부 이벤트 로그 원문을 진단 파일에 담을 때 생길 수 있는 오해와 민감 정보 노출 가능성을 줄이기 위한 보강입니다.
+
+* 패키지 검증
+  - 최종 공개 패키지 빌드 audit에서 `patch_count=15`, `payload_count=15`, `exact_patched_count=15`, `missing_count=0`을 확인했습니다.
+  - clean/temp install gate는 `status -> apply -> status -> apply -> save-apply -> save-restore -> restore` 순서로 모두 return code `0`을 확인했습니다.
+  - 최종 focused suite는 `98` tests OK, `1` skipped로 통과했습니다.
 
 ## beta-20260602-v3 대비 변경사항
 
