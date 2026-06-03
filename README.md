@@ -6,24 +6,24 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260602-v3.zip`
-- SHA-256: `DB39341F7EA548DFDE870C42E56742274543B78402DF78E9FBCA6B6D7D72BAA8`
-- 파일 크기: `21,536,336` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260604-v1.zip`
+- SHA-256: `BCF78FC462E07E2A6C3221B3EC970B0E85D5C796705772D8BFB29CB8E8CD58F2`
+- 파일 크기: `22,768,592` bytes
 - 체크섬 파일: `SHA256SUMS.txt`
 - 주요 변경사항: [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - 버전명 정책: [VERSIONING.md](VERSIONING.md)
 
 ## 이번 릴리즈
 
-- 배포 런처 레이아웃을 정리하고, 이미지가 포함된 네이티브 EXE 런처 화면으로 갱신했습니다.
-- 저해상도 환경에서 핵심 버튼을 누르기 쉽도록 `Wind3 Korean Patch Lite Launcher.exe`를 추가했습니다.
-- `진단 정보 저장`이 런처 오류, 백엔드 로그, 패치 상태, 주요 파일 해시, runtime_policy.ini, hook 로그, Windows Application 이벤트 로그를 함께 기록하도록 보강했습니다.
-- 실행별 로그가 무한정 쌓이지 않도록 최근 실행/오류/진단 로그만 보존하고 오래된 항목은 자동으로 정리합니다.
+- normal/Lite 런처에 `키 설정`을 추가해 텐키리스 키보드에서도 카메라 이동, 확대/축소, 회전, 기울임을 설정할 수 있게 했습니다.
+- 전투 HUD의 `賽連軍` 라벨이 `세이렌군`으로 표시되도록 `PersonName` engine rewrite 경로를 보강했습니다.
+- 복원/세이브 패치 BOM 처리, 배포 백엔드 로그 인코딩, shop description getter, 인물/직업/월드맵/세이브 보정 경로를 최신 패키지 기준으로 누적 반영했습니다.
+- 기존 pre-release 변경사항(`beta-20260526-v1`, `beta-20260602-v1/v2/v3`)을 포함한 누적 베타입니다.
 - 이번 배포는 pre-release입니다.
 
 ## 사용 방법
 
-1. `wind3-korean-patch-beta-20260602-v3.zip`을 다운로드합니다.
+1. `wind3-korean-patch-beta-20260604-v1.zip`을 다운로드합니다.
 2. 원하는 위치에 압축을 풉니다.
 3. 압축을 푼 폴더에서 `Wind3 Korean Patch Launcher.exe`를 실행합니다.
 4. 런처에서 `WIND3.EXE`가 있는 Wind Fantasy 3 설치 폴더를 선택합니다.
@@ -31,6 +31,8 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 6. 기존 저장 데이터를 계속 사용할 경우 `세이브 패치` 기능이 함께 실행됩니다. 필요하면 런처에서 다시 실행할 수 있습니다.
 
 저해상도 환경에서 일반 런처 버튼이 잘 보이지 않으면 `Wind3 Korean Patch Lite Launcher.exe`를 실행하세요.
+
+텐키리스 키보드에서 numpad 카메라 조작이 어렵다면 런처의 `키 설정`에서 키를 바꾸세요.
 
 자세한 런처 사용법과 문제 해결 안내는 압축 파일 안의 `README.txt`를 확인하세요.
 
