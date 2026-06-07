@@ -1,10 +1,31 @@
-# 릴리즈 노트 (beta-20260608-v2)
+# 릴리즈 노트 (beta-20260608-v3)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260608-v2.zip`
-- SHA-256: `C1192D2BCFD0DCB6DCAD87E940C2C9DFF99968D0EAED6567B864A0C70D46F1AB`
-- 파일 크기: `22,825,020` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260608-v3.zip`
+- SHA-256: `43EF5C0B0F95440FA96828DFA4BEFFF21F057DCD77B1445F19959A6AA0267BD8`
+- 파일 크기: `22,838,458` bytes
+
+## beta-20260608-v2 대비 변경사항
+
+* 런처 업데이트 handoff 보강
+  - 런처의 `런처 업데이트` 버튼은 런처가 먼저 종료를 시작한 뒤 업데이터를 실행하도록 변경했습니다.
+  - 기존 방식은 업데이터가 실행 중인 런처 EXE를 교체해야 해서 수정일자가 그대로 남거나 교체 실패가 애매하게 보일 수 있었습니다.
+
+* 배포 bundle 전체 갱신
+  - v3 업데이터는 원격 ZIP에서 런처 EXE 하나만 추출하지 않고 `wind3_korean_patch/` 전체를 임시 폴더에 풀어 `_runtime`, launcher, Lite launcher, README, `launcher_version.json`까지 갱신합니다.
+  - 실행 중인 업데이터 EXE 자체는 직접 덮어쓸 수 없으므로 새 업데이터는 `.new` 파일로 남깁니다. 다음 전체 ZIP 설치부터는 updater도 최신 상태가 됩니다.
+  - v1/v2 업데이터는 이 전체 bundle 갱신 로직이 없으므로, 이미 v1/v2를 받은 사용자는 v3 ZIP을 직접 다운로드해 한 번 새로 풀어 적용하는 것을 권장합니다.
+
+* 런처 설정 보존
+  - `패치 적용`이 `_runtime_patch/runtime_policy.ini`를 다시 설치할 때 기존 게임 폴더의 `window`, `input`, `automation`, `auto_action` 설정을 보존합니다.
+  - 따라서 `자동 기능 사용 (/ 키, 실험용)`을 켜둔 뒤 패치를 다시 적용해도 `execute_enabled=1`, `execution_mode=auto_decide_ai_attack_score_probe`, `attack_select_enabled=1` 설정이 기본 OFF로 되돌아가지 않습니다.
+
+* 패키지 검증
+  - clean/temp install apply 검증에서 `d3d9.dll` SHA-256 `A1EF7723E7C3F70947EC656C49EC4E5DB927321A0647EE8E2D5E8EBF8412F5AF`, `dinput8.dll` 설치, `camera_down_key=K` 정책을 확인했습니다.
+  - 기존 `auto_action` ON 정책을 가진 임시 설치에서 `패치 적용`을 재실행해 `Existing launcher runtime settings preserved.`와 ON 정책 유지, return code `0`을 확인했습니다.
+  - v3 업데이터의 ZIP 추출/전체 bundle 교체 경로를 reflection으로 호출해 launcher, Lite launcher, `_runtime/release_runtime_backend.exe`, `launcher_version.json` 교체를 확인했습니다.
+  - focused tests는 런처/업데이터 테스트 `95`개 OK, `1` skipped로 통과했고, launcher/updater C# 컴파일을 확인했습니다.
 
 ## beta-20260608-v1 대비 변경사항
 

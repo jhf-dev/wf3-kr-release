@@ -6,25 +6,26 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260608-v2.zip`
-- SHA-256: `C1192D2BCFD0DCB6DCAD87E940C2C9DFF99968D0EAED6567B864A0C70D46F1AB`
-- 파일 크기: `22,825,020` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260608-v3.zip`
+- SHA-256: `43EF5C0B0F95440FA96828DFA4BEFFF21F057DCD77B1445F19959A6AA0267BD8`
+- 파일 크기: `22,838,458` bytes
 - 체크섬 파일: `SHA256SUMS.txt`
 - 주요 변경사항: [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - 버전명 정책: [VERSIONING.md](VERSIONING.md)
 
 ## 이번 릴리즈
 
-- K 키 카메라 입력 프록시와 자동행동 포함 `d3d9.dll`이 최종 패키지에 같이 들어가도록 배포 자산을 갱신했습니다.
-- 런처의 `자동 기능 사용 (/ 키, 실험용)` 체크박스를 켜면 `/` 자동행동 실행 프로필까지 저장합니다. 기본값은 꺼짐입니다.
-- 런처 정책 파일 저장 시 `[auto_action]`, `[automation]`, `[runtime_features]` 섹션이 서로 겹쳐 쓰이지 않도록 보강했습니다.
+- 런처 업데이트 handoff를 보강해 런처가 먼저 종료된 뒤 업데이터가 실행되도록 했습니다.
+- v3 업데이터는 런처 EXE 하나가 아니라 `_runtime`을 포함한 배포 bundle 전체를 갱신합니다.
+- `패치 적용`을 다시 실행해도 기존 `키 설정` / `자동 기능 사용 (/ 키, 실험용)` 정책을 보존합니다.
+- K 키 카메라 입력 프록시와 자동행동 포함 `d3d9.dll`이 최종 패키지에 같이 들어가도록 유지했습니다.
 - 별도 실행 파일 `Wind3 Korean Patch Updater.exe`를 포함했습니다.
 - 런처의 `실험 버전 포함` 체크박스를 켜면 pre-release까지 포함한 최신 배포를 확인합니다.
 - 현재 런처 버전을 신뢰할 수 없으면 다운로드 전에 사용자 확인을 받고, 현재 버전이 최신이면 다운로드를 시도하지 않습니다.
 
 ## 사용 방법
 
-1. `wind3-korean-patch-beta-20260608-v2.zip`을 다운로드합니다.
+1. `wind3-korean-patch-beta-20260608-v3.zip`을 다운로드합니다.
 2. 원하는 위치에 압축을 풉니다.
 3. 압축을 푼 폴더에서 `Wind3 Korean Patch Launcher.exe`를 실행합니다.
 4. 런처에서 `WIND3.EXE`가 있는 Wind Fantasy 3 설치 폴더를 선택합니다.
