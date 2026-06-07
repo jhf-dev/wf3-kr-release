@@ -1,10 +1,28 @@
-# 릴리즈 노트 (beta-20260608-v1)
+# 릴리즈 노트 (beta-20260608-v2)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260608-v1.zip`
-- SHA-256: `730A62441964F7FFB163A6425F1C0B0E9D768C10889EBCD45AABB19FCB0553EE`
-- 파일 크기: `22,785,313` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260608-v2.zip`
+- SHA-256: `C1192D2BCFD0DCB6DCAD87E940C2C9DFF99968D0EAED6567B864A0C70D46F1AB`
+- 파일 크기: `22,825,020` bytes
+
+## beta-20260608-v1 대비 변경사항
+
+* 새 PC 적용 패키지 누락 보강
+  - 자동행동 포함 `d3d9.dll`을 final bundle과 런처 배포 자산에 다시 승격했습니다.
+  - clean/temp install apply 검증에서 설치 후 `d3d9.dll` SHA-256이 `A1EF7723E7C3F70947EC656C49EC4E5DB927321A0647EE8E2D5E8EBF8412F5AF`임을 확인했습니다.
+  - 입력 리맵 프록시 `dinput8.dll`이 설치되고, 기본 정책에 `keyboard_remap_enabled=1`, `camera_down_key=K`가 포함됨을 확인했습니다.
+
+* `/` 자동행동 설정 저장 보강
+  - 런처의 `자동 기능 사용 (/ 키, 실험용)` 체크박스를 켜면 `execution_mode=auto_decide_ai_attack_score_probe`, `execute_enabled=1`, `skill_record_noshow_execute_enabled=1`, `attack_select_enabled=1`까지 함께 저장합니다.
+  - 체크박스를 끄면 자동행동 실행 계열 키가 다시 꺼지고 `execution_mode=dry_run`으로 돌아갑니다.
+  - `[auto_action]`, `[automation]`, `[runtime_features]` 섹션을 고정 줄 번호가 아니라 섹션 prefix 기준으로 작성해 정책 파일 섹션이 겹쳐 쓰이지 않도록 했습니다.
+
+* 패키지 검증
+  - 새 ZIP을 깨끗한 임시 게임 폴더에 풀고 release backend `apply`를 실행해 return code `0`을 확인했습니다.
+  - 빌드된 런처 EXE의 `RuntimePolicy.SetAutoActionEnabled(true/false)`를 reflection으로 호출해 실제 저장 결과를 확인했습니다.
+  - focused tests는 런처 테스트 `95`개 OK, `1` skipped, 자동행동 정책 테스트 `35`개 OK, span guard 테스트 `51`개 OK로 통과했습니다.
+  - Phase1C promotion asset 검증에서 `3`개 promotion asset이 `2031`개 description-control marker를 포함함을 확인했습니다.
 
 ## beta-20260604-v2 대비 변경사항
 
