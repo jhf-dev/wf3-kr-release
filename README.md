@@ -6,24 +6,26 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260604-v2.zip`
-- SHA-256: `520EC5EAEB8FCD8F07EF8B8A29FAA8227288CEBB7BF777ABC5FE51960E4E5538`
-- 파일 크기: `22,767,192` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260608-v1.zip`
+- SHA-256: `730A62441964F7FFB163A6425F1C0B0E9D768C10889EBCD45AABB19FCB0553EE`
+- 파일 크기: `22,785,313` bytes
 - 체크섬 파일: `SHA256SUMS.txt`
 - 주요 변경사항: [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - 버전명 정책: [VERSIONING.md](VERSIONING.md)
 
 ## 이번 릴리즈
 
-- normal/Lite 런처에 `키 설정`을 추가해 텐키리스 키보드에서도 카메라 이동, 확대/축소, 회전, 기울임을 설정할 수 있게 했습니다.
-- 진단 정보 저장 시 Windows 이벤트 로그의 `CmdLine` / `CommandLine` 원문을 가려, 채팅이나 다른 도구에 남은 위험해 보이는 명령줄이 진단 파일에 그대로 들어가지 않도록 했습니다.
-- 전투 HUD의 `賽連軍` 라벨이 `세이렌군`으로 표시되도록 `PersonName` engine rewrite 경로를 보강했습니다.
-- 복원/세이브 패치 BOM 처리, 배포 백엔드 로그 인코딩, shop description getter, 인물/직업/월드맵/세이브 보정 경로를 최신 패키지 기준으로 누적 반영했습니다.
-- 기존 pre-release 변경사항(`beta-20260526-v1`, `beta-20260602-v1/v2/v3`)을 포함한 누적 베타입니다.
+- 별도 실행 파일 `Wind3 Korean Patch Updater.exe`를 포함했습니다.
+- 런처의 `실험 버전 포함` 체크박스를 켜면 pre-release까지 포함한 최신 배포를 확인합니다.
+- 런처 설정에 실험용 `자동 기능 사용 (/ 키, 실험용)` 체크박스를 포함했습니다. 기본값은 꺼짐입니다.
+- `launcher_version.json` 기반 버전/해시 검증을 추가했습니다.
+- 현재 런처 버전을 신뢰할 수 없으면 다운로드 전에 사용자 확인을 받습니다.
+- 현재 버전이 최신이면 다운로드를 시도하지 않습니다.
+- `launcher_version.json`이 없는 구버전 원격 ZIP은 업데이트 성공으로 처리하지 않습니다.
 
 ## 사용 방법
 
-1. `wind3-korean-patch-beta-20260604-v2.zip`을 다운로드합니다.
+1. `wind3-korean-patch-beta-20260608-v1.zip`을 다운로드합니다.
 2. 원하는 위치에 압축을 풉니다.
 3. 압축을 푼 폴더에서 `Wind3 Korean Patch Launcher.exe`를 실행합니다.
 4. 런처에서 `WIND3.EXE`가 있는 Wind Fantasy 3 설치 폴더를 선택합니다.

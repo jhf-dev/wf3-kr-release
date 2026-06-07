@@ -1,10 +1,34 @@
-# 릴리즈 노트 (beta-20260604-v2)
+# 릴리즈 노트 (beta-20260608-v1)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260604-v2.zip`
-- SHA-256: `520EC5EAEB8FCD8F07EF8B8A29FAA8227288CEBB7BF777ABC5FE51960E4E5538`
-- 파일 크기: `22,767,192` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260608-v1.zip`
+- SHA-256: `730A62441964F7FFB163A6425F1C0B0E9D768C10889EBCD45AABB19FCB0553EE`
+- 파일 크기: `22,785,313` bytes
+
+## beta-20260604-v2 대비 변경사항
+
+* 런처 업데이트 기능 추가
+  - 별도 실행 파일 `Wind3 Korean Patch Updater.exe`를 배포 패키지에 포함했습니다.
+  - 구버전 런처 사용자도 업데이터 EXE를 직접 실행해 새 런처를 받을 수 있습니다.
+  - normal/Lite 런처에 `실험 버전 포함` 체크박스와 `런처 업데이트` 버튼을 추가했습니다.
+  - 체크박스를 켜면 pre-release까지 포함한 최신 배포를 확인하고, 끄면 GitHub latest 배포를 확인합니다.
+
+* 자동 기능 설정 노출
+  - 런처 설정에 실험용 `자동 기능 사용 (/ 키, 실험용)` 체크박스를 포함했습니다.
+  - 기본값은 꺼짐이며, 켜면 런처가 `[auto_action]` 정책을 작성합니다.
+  - 자동 기능은 실험용 opt-in 기능이라 일반 실행 기본값은 바꾸지 않습니다.
+
+* 버전 확인 정책 보강
+  - `launcher_version.json`에 버전, 배포 저장소, asset 패턴, normal/Lite 런처 해시, 업데이터 해시를 기록합니다.
+  - 현재 런처 버전을 신뢰할 수 없으면 다운로드 전에 사용자 확인을 받습니다.
+  - 현재 버전이 최신이면 다운로드를 시도하지 않고 최신 상태 메시지만 표시합니다.
+  - `launcher_version.json`이 없는 구버전 원격 ZIP은 업데이트 성공으로 처리하지 않습니다.
+  - GitHub REST releases 응답 순서와 무관하게 non-draft 릴리즈 중 가장 높은 버전/날짜를 선택하도록 보정했습니다.
+
+* 패키지 검증
+  - 릴리즈 ZIP 안에 `launcher_version.json`, `Wind3 Korean Patch Updater.exe`, normal/Lite 런처가 포함되어 있음을 확인했습니다.
+  - 업데이터/릴리즈 빌더 focused test를 통과했습니다.
 
 ## beta-20260604-v1 대비 변경사항
 
