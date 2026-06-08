@@ -13,6 +13,8 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 - 주요 변경사항: [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - 버전명 정책: [VERSIONING.md](VERSIONING.md)
 
+> 참고: `beta-20260609-v2`는 legacy 이름을 가진 현재 안정화 릴리즈입니다. 이후 새 안정화 릴리즈는 `YYYYMMDD-vN-release`, 개발 테스트용 pre-release는 `YYYYMMDD-vN` 형식을 사용합니다.
+
 ## 이번 릴리즈
 - `버전 안내` 버튼을 단순화했습니다. 런처가 백엔드를 띄우거나 DLL 해시를 계산하지 않고, 패키지의 `launcher_version.json`만 읽어 현재 버전/tag를 즉시 보여줍니다.
 - 별도 `진단 정보 저장` 버튼을 없애고 `오류 보고 ZIP`으로 합쳤습니다. ZIP 안에 `diagnostics/wind3_release_diagnostics.txt`가 함께 들어갑니다.
