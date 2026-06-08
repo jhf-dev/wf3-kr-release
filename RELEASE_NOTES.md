@@ -1,12 +1,33 @@
-# 릴리즈 노트 (beta-20260609-v1)
+# 릴리즈 노트 (beta-20260609-v2)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260609-v1.zip`
-- SHA-256: `3D997BA55DD40AB2F3BA6ADB3E5C6C31691D4ED64610634DE057011A0DFB4E86`
-- 파일 크기: `22,844,875` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260609-v2.zip`
+- SHA-256: `0AADDB50D2F32C8483B5A57003419614F34123F750F9DE889DD14ACD3D1DC3E1`
+- 파일 크기: `22,846,150` bytes
 
 ## beta-20260609-v1 대비 변경사항
+
+* 버전 안내 단순화
+  - 런처의 `버전 안내` 버튼은 이제 백엔드 EXE를 실행하지 않습니다.
+  - `launcher_version.json`만 읽어서 현재 패키지 버전/tag, repository, 생성 시각을 즉시 표시합니다.
+  - `d3d9.dll`, `dinput8.dll`, launcher/updater 해시는 버전 안내에서 계산하지 않습니다.
+
+* 진단 저장과 오류 보고 ZIP 통합
+  - 별도 `진단 정보 저장` 버튼을 제거하고 `오류 보고 ZIP` 버튼으로 합쳤습니다.
+  - 오류 보고 ZIP에는 `diagnostics/wind3_release_diagnostics.txt`가 포함됩니다.
+  - DLL 파일 본문은 계속 제외하고, DLL 식별에는 파일명, 크기, 수정 시각, SHA-256 메타데이터를 사용합니다.
+
+* 패키지 검증
+  - ZIP SHA-256: `0AADDB50D2F32C8483B5A57003419614F34123F750F9DE889DD14ACD3D1DC3E1`.
+  - clean/temp install gate에서 `status -> apply -> status -> apply -> save-apply -> save-restore -> restore` 모두 return code `0`을 확인했습니다.
+  - 빌드된 백엔드 `version-info` 출력이 파일 해시 목록 없이 버전 메타데이터만 표시함을 확인했습니다.
+  - 빌드된 백엔드 `bug-report` ZIP에 `diagnostics/wind3_release_diagnostics.txt`가 포함되고 `.exe`/`.dll` 엔트리가 없음을 확인했습니다.
+  - 적용된 root `d3d9.dll` SHA-256은 `A1EF7723E7C3F70947EC656C49EC4E5DB927321A0647EE8E2D5E8EBF8412F5AF`입니다.
+
+## 이전 릴리즈 기록
+
+## beta-20260609-v1 변경사항
 
 * 오류 보고 ZIP 경량화
   - `오류 보고 ZIP`은 더 이상 DLL 파일 본문을 ZIP에 포함하지 않습니다.
@@ -19,8 +40,6 @@
   - ZIP SHA-256: `3D997BA55DD40AB2F3BA6ADB3E5C6C31691D4ED64610634DE057011A0DFB4E86`.
   - clean/temp install gate에서 `status -> apply -> status -> apply -> save-apply -> save-restore -> restore` 모두 return code `0`을 확인했습니다.
   - 적용된 root `d3d9.dll` SHA-256은 `A1EF7723E7C3F70947EC656C49EC4E5DB927321A0647EE8E2D5E8EBF8412F5AF`입니다.
-
-## 이전 릴리즈 기록
 
 ## beta-20260608-v4 대비 변경사항
 * 런처 버전 안내 추가
