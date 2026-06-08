@@ -1,10 +1,26 @@
-# 릴리즈 노트 (beta-20260608-v4)
+# 릴리즈 노트 (beta-20260609-v1)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260608-v4.zip`
-- SHA-256: `E7A584D06CF7F977D232BB7ADDB76858DA654CD3751593E4102BE8087654FEAF`
-- 파일 크기: `22,843,981` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260609-v1.zip`
+- SHA-256: `3D997BA55DD40AB2F3BA6ADB3E5C6C31691D4ED64610634DE057011A0DFB4E86`
+- 파일 크기: `22,844,875` bytes
+
+## beta-20260609-v1 대비 변경사항
+
+* 오류 보고 ZIP 경량화
+  - `오류 보고 ZIP`은 더 이상 DLL 파일 본문을 ZIP에 포함하지 않습니다.
+  - `d3d9.dll`, `dinput8.dll` 등 DLL 식별에는 파일명, 크기, 수정 시각, SHA-256 메타데이터를 사용합니다.
+  - DLL 메타데이터는 `bug_report_summary.txt`와 `bug_report_manifest.json`의 `metadata_only` 항목에 기록됩니다.
+  - 로그, SAVE, runtime policy/manifest, selected analysis reports는 계속 포함합니다.
+  - `WIND3.EXE`, 모든 `.exe`, `.zip`, DLL 파일 본문은 제외합니다.
+
+* 패키지 검증
+  - ZIP SHA-256: `3D997BA55DD40AB2F3BA6ADB3E5C6C31691D4ED64610634DE057011A0DFB4E86`.
+  - clean/temp install gate에서 `status -> apply -> status -> apply -> save-apply -> save-restore -> restore` 모두 return code `0`을 확인했습니다.
+  - 적용된 root `d3d9.dll` SHA-256은 `A1EF7723E7C3F70947EC656C49EC4E5DB927321A0647EE8E2D5E8EBF8412F5AF`입니다.
+
+## 이전 릴리즈 기록
 
 ## beta-20260608-v4 대비 변경사항
 * 런처 버전 안내 추가
