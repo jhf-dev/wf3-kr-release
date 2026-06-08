@@ -25,6 +25,8 @@ YYYYMMDD-vN
 - `YYYYMMDD-vN`: 실험적 기능이 포함될 수 있는 개발 테스트용 pre-release입니다.
 - 안정화 release만 버전명 맨 뒤에 `-release`를 붙입니다.
 - pre-release 버전명에는 `pre-release`, `beta`, `test` 같은 타입 단어를 붙이지 않습니다.
+- `YYYYMMDD-vN`과 `YYYYMMDD-vN-release`는 같은 base version입니다. `-release`는 더 높은 패치 번호가 아니라 공개 상태/채널 표시입니다.
+- pre-release 이후 ZIP 내용, SHA-256, 런처 동작, 릴리즈 노트, 사용자 안내 문서가 바뀌면 같은 `vN-release`로 올리지 않고 `vN`을 증가시킨 뒤 release로 배포합니다.
 
 ## 배포 파일 이름
 
@@ -42,6 +44,7 @@ GitHub Release 제목/name은 반드시 버전명만 사용합니다. 제품명,
 - release는 개발자 테스트가 끝난 안정화 버전입니다. GitHub에서는 `prerelease=false`, `draft=false`, latest 상태로 공개합니다.
 - pre-release는 실험적 기능이 포함된 개발 테스트용 릴리즈입니다. 테스트 중에만 `prerelease=true`, `draft=false`로 둘 수 있습니다.
 - 안정화 release를 올릴 때 같은 테스트 주기의 pre-release는 draft로 전환해 비공개 처리합니다.
+- 같은 base version의 pre-release와 release는 동일한 변경 단위를 가리킵니다. 안정화 과정에서 배포물이 바뀌면 새 base version을 만듭니다.
 
 ## 릴리즈 노트 정책
 
