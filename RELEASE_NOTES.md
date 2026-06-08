@@ -9,11 +9,11 @@
 ## beta-20260609-v1 대비 변경사항
 
 * 버전 안내 단순화
-  - 런처의 `버전 안내` 버튼은 이제 백엔드 EXE를 실행하지 않습니다.
-  - `launcher_version.json`만 읽어서 현재 패키지 버전/tag, repository, 생성 시각을 즉시 표시합니다.
-  - `d3d9.dll`, `dinput8.dll`, launcher/updater 해시는 버전 안내에서 계산하지 않습니다.
+  - `버전 안내` 버튼이 백엔드 EXE를 실행하지 않도록 변경했습니다.
+  - 런처는 `launcher_version.json`만 읽어 현재 패키지 버전/tag를 표시합니다.
+  - 버전 안내에서 `d3d9.dll`, `dinput8.dll`, launcher/updater 해시는 계산하지 않습니다.
 
-* 진단 저장과 오류 보고 ZIP 통합
+* 오류 보고 ZIP 통합
   - 별도 `진단 정보 저장` 버튼을 제거하고 `오류 보고 ZIP` 버튼으로 합쳤습니다.
   - 오류 보고 ZIP에는 `diagnostics/wind3_release_diagnostics.txt`가 포함됩니다.
   - DLL 파일 본문은 계속 제외하고, DLL 식별에는 파일명, 크기, 수정 시각, SHA-256 메타데이터를 사용합니다.
@@ -23,11 +23,9 @@
   - clean/temp install gate에서 `status -> apply -> status -> apply -> save-apply -> save-restore -> restore` 모두 return code `0`을 확인했습니다.
   - 빌드된 백엔드 `version-info` 출력이 파일 해시 목록 없이 버전 메타데이터만 표시함을 확인했습니다.
   - 빌드된 백엔드 `bug-report` ZIP에 `diagnostics/wind3_release_diagnostics.txt`가 포함되고 `.exe`/`.dll` 엔트리가 없음을 확인했습니다.
-  - 적용된 root `d3d9.dll` SHA-256은 `A1EF7723E7C3F70947EC656C49EC4E5DB927321A0647EE8E2D5E8EBF8412F5AF`입니다.
+  - 원격 릴리즈 asset 다운로드 해시가 로컬 ZIP 해시와 일치함을 확인했습니다.
 
-## 이전 릴리즈 기록
-
-## beta-20260609-v1 변경사항
+## beta-20260608-v4 대비 변경사항
 
 * 오류 보고 ZIP 경량화
   - `오류 보고 ZIP`은 더 이상 DLL 파일 본문을 ZIP에 포함하지 않습니다.
@@ -41,7 +39,8 @@
   - clean/temp install gate에서 `status -> apply -> status -> apply -> save-apply -> save-restore -> restore` 모두 return code `0`을 확인했습니다.
   - 적용된 root `d3d9.dll` SHA-256은 `A1EF7723E7C3F70947EC656C49EC4E5DB927321A0647EE8E2D5E8EBF8412F5AF`입니다.
 
-## beta-20260608-v4 대비 변경사항
+## beta-20260608-v3 대비 변경사항
+
 * 런처 버전 안내 추가
   - `버전 안내` 버튼으로 현재 패키지 버전/tag, GitHub release repository, launcher/Lite/updater SHA-256, root `d3d9.dll`/`dinput8.dll`, `runtime_policy.ini` 해시를 확인할 수 있습니다.
   - 문제 제보 시 사용자가 설치한 패키지와 실제 적용 DLL 조합을 빠르게 대조할 수 있습니다.
@@ -60,6 +59,7 @@
   - ZIP SHA-256: `E7A584D06CF7F977D232BB7ADDB76858DA654CD3751593E4102BE8087654FEAF`.
   - clean/temp install gate에서 `status -> apply -> status -> apply -> save-apply -> save-restore -> restore` 전부 return code `0`을 확인했습니다.
   - 적용된 root `d3d9.dll` SHA-256은 `A1EF7723E7C3F70947EC656C49EC4E5DB927321A0647EE8E2D5E8EBF8412F5AF`입니다.
+
 ## beta-20260608-v2 대비 변경사항
 
 * 런처 업데이트 handoff 보강
