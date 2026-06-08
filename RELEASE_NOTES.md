@@ -1,11 +1,30 @@
-# 릴리즈 노트 (beta-20260608-v3)
+# 릴리즈 노트 (beta-20260608-v4)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260608-v3.zip`
-- SHA-256: `43EF5C0B0F95440FA96828DFA4BEFFF21F057DCD77B1445F19959A6AA0267BD8`
-- 파일 크기: `22,838,458` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260608-v4.zip`
+- SHA-256: `E7A584D06CF7F977D232BB7ADDB76858DA654CD3751593E4102BE8087654FEAF`
+- 파일 크기: `22,843,981` bytes
 
+## beta-20260608-v4 대비 변경사항
+* 런처 버전 안내 추가
+  - `버전 안내` 버튼으로 현재 패키지 버전/tag, GitHub release repository, launcher/Lite/updater SHA-256, root `d3d9.dll`/`dinput8.dll`, `runtime_policy.ini` 해시를 확인할 수 있습니다.
+  - 문제 제보 시 사용자가 설치한 패키지와 실제 적용 DLL 조합을 빠르게 대조할 수 있습니다.
+
+* 오류 보고 ZIP 추가
+  - `오류 보고 ZIP` 버튼은 package `_runtime/logs/wind3_bug_report_*.zip`을 생성합니다.
+  - 포함: 로그, SAVE, DLL, runtime policy/manifest, selected analysis reports.
+  - 제외: `WIND3.EXE`와 모든 `.exe` 파일.
+
+* 세이브 검사/복구 UI 추가
+  - `세이브 검사`는 현재 세이브가 현 버전 형식으로 읽히는지 검증합니다.
+  - `세이브 복구`는 백업 기반 복원이 아니라 현재 세이브를 기준으로 현 버전 텍스트/아이템 이름 형식에 맞춰 동기화합니다.
+  - 구조적으로 손상되거나 읽을 수 없는 세이브는 현재 세이브만으로 재구축하지 않고 중단합니다.
+
+* 패키지 검증
+  - ZIP SHA-256: `E7A584D06CF7F977D232BB7ADDB76858DA654CD3751593E4102BE8087654FEAF`.
+  - clean/temp install gate에서 `status -> apply -> status -> apply -> save-apply -> save-restore -> restore` 전부 return code `0`을 확인했습니다.
+  - 적용된 root `d3d9.dll` SHA-256은 `A1EF7723E7C3F70947EC656C49EC4E5DB927321A0647EE8E2D5E8EBF8412F5AF`입니다.
 ## beta-20260608-v2 대비 변경사항
 
 * 런처 업데이트 handoff 보강

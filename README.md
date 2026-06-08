@@ -6,26 +6,23 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260608-v3.zip`
-- SHA-256: `43EF5C0B0F95440FA96828DFA4BEFFF21F057DCD77B1445F19959A6AA0267BD8`
-- 파일 크기: `22,838,458` bytes
+- 배포 파일: `wind3-korean-patch-beta-20260608-v4.zip`
+- SHA-256: `E7A584D06CF7F977D232BB7ADDB76858DA654CD3751593E4102BE8087654FEAF`
+- 파일 크기: `22,843,981` bytes
 - 체크섬 파일: `SHA256SUMS.txt`
 - 주요 변경사항: [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - 버전명 정책: [VERSIONING.md](VERSIONING.md)
 
 ## 이번 릴리즈
-
-- 런처 업데이트 handoff를 보강해 런처가 먼저 종료된 뒤 업데이터가 실행되도록 했습니다.
-- v3 업데이터는 런처 EXE 하나가 아니라 `_runtime`을 포함한 배포 bundle 전체를 갱신합니다.
-- `패치 적용`을 다시 실행해도 기존 `키 설정` / `자동 기능 사용 (/ 키, 실험용)` 정책을 보존합니다.
-- K 키 카메라 입력 프록시와 자동행동 포함 `d3d9.dll`이 최종 패키지에 같이 들어가도록 유지했습니다.
-- 별도 실행 파일 `Wind3 Korean Patch Updater.exe`를 포함했습니다.
-- 런처의 `실험 버전 포함` 체크박스를 켜면 pre-release까지 포함한 최신 배포를 확인합니다.
-- 현재 런처 버전을 신뢰할 수 없으면 다운로드 전에 사용자 확인을 받고, 현재 버전이 최신이면 다운로드를 시도하지 않습니다.
+- 런처에 `버전 안내` 버튼을 추가해 현재 패키지 버전/tag, 런처/Lite/updater 해시, d3d9/dinput8/runtime_policy 해시를 바로 확인할 수 있습니다.
+- `오류 보고 ZIP` 버튼을 추가했습니다. 로그, SAVE, DLL, 런타임 정책/manifest, 분석 리포트를 묶고 `WIND3.EXE`와 모든 `.exe` 파일은 제외합니다.
+- `세이브 검사`, `세이브 복구`, `백업 되돌리기` 기능을 추가했습니다. 세이브 복구는 백업이 아니라 현재 세이브를 현 버전 형식에 맞춰 검증 후 동기화합니다.
+- v1/v2 사용자는 오래된 updater가 `_runtime`을 교체하지 못할 수 있으므로, 이번 ZIP을 한 번 직접 압축해제한 뒤 이후 updater를 사용하세요.
+- v3 이후 사용자는 updater가 전체 bundle을 교체하는 경로를 사용합니다.
 
 ## 사용 방법
 
-1. `wind3-korean-patch-beta-20260608-v3.zip`을 다운로드합니다.
+1. `wind3-korean-patch-beta-20260608-v4.zip`을 다운로드합니다.
 2. 원하는 위치에 압축을 풉니다.
 3. 압축을 푼 폴더에서 `Wind3 Korean Patch Launcher.exe`를 실행합니다.
 4. 런처에서 `WIND3.EXE`가 있는 Wind Fantasy 3 설치 폴더를 선택합니다.
