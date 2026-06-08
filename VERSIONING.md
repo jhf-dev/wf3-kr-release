@@ -68,17 +68,22 @@ GitHub Release 제목/name은 반드시 버전명만 사용합니다. 제품명,
 
 ## 커밋 메시지 정책
 
-릴리즈 저장소 커밋 메시지는 실제 작업과 버전을 드러내야 합니다.
+릴리즈 저장소 커밋 메시지는 참조 커밋과 같은 구조를 사용합니다.
 
 ```text
-Publish YYYYMMDD-vN-release
-Publish YYYYMMDD-vN pre-release
-Draft superseded pre-releases for YYYYMMDD-vN-release
-Update release versioning policy
-Fix release notes for YYYYMMDD-vN-release
+런처 패키지를 EXE 엔트리포인트로 정리
+
+- 개발용과 배포용 런처의 최종 진입점을 EXE로 고정
+- 배포 EXE가 PowerShell bootstrap 없이 bundled Python backend를 직접 호출하도록 정리
+- csc 직접 빌드와 ZIP 산출물 검증, active note 갱신을 추가
 ```
 
-`hotfix`, `release update`, `notes fix`처럼 어떤 버전과 상태를 바꿨는지 알 수 없는 메시지는 피합니다.
+- 제목은 첫 줄에 한국어로 씁니다.
+- 본문은 `- ` bullet line으로 변경사항을 요약합니다.
+- 본문은 가능하면 `2-4`줄로 씁니다.
+- 본문에 별도 헤딩을 만들지 않습니다.
+- 본문 bullet 사이에 빈 줄을 넣지 않습니다. 빈 줄은 Git의 제목/본문 구분선 하나만 둡니다.
+- `hotfix`, `release update`, `notes fix`처럼 모호하거나 영어로 된 제목은 피합니다.
 
 ## 검증 정책
 
