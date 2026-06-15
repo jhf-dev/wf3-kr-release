@@ -6,25 +6,23 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-beta-20260609-v2.zip`
-- SHA-256: `0AADDB50D2F32C8483B5A57003419614F34123F750F9DE889DD14ACD3D1DC3E1`
-- 파일 크기: `22,846,150` bytes
+- 배포 파일: `wind3-korean-patch-20260615-v1-release.zip`
+- SHA-256: `10675F4C144D044870A55C41274C81B7A06310E708BBF9F8BC661CBCA15AD3DB`
+- 파일 크기: `22,846,531` bytes
 - 체크섬 파일: `SHA256SUMS.txt`
 - 주요 변경사항: [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - 버전명 정책: [VERSIONING.md](VERSIONING.md)
 
-> 참고: `beta-20260609-v2`는 legacy 이름을 가진 현재 안정화 릴리즈입니다. 이후 새 안정화 릴리즈는 `YYYYMMDD-vN-release`, 개발 테스트용 pre-release는 `YYYYMMDD-vN` 형식을 사용합니다.
+> 참고: 현재 안정화 릴리즈는 `20260615-v1-release`입니다. 안정화 릴리즈는 `YYYYMMDD-vN-release`, 개발 테스트용 pre-release는 `YYYYMMDD-vN` 형식을 사용합니다.
 
 ## 이번 릴리즈
-- `버전 안내` 버튼을 단순화했습니다. 런처가 백엔드를 띄우거나 DLL 해시를 계산하지 않고, 패키지의 `launcher_version.json`만 읽어 현재 버전/tag를 즉시 보여줍니다.
-- 별도 `진단 정보 저장` 버튼을 없애고 `오류 보고 ZIP`으로 합쳤습니다. ZIP 안에 `diagnostics/wind3_release_diagnostics.txt`가 함께 들어갑니다.
-- `오류 보고 ZIP`은 로그, SAVE, 런타임 정책/manifest, 분석 리포트와 DLL SHA-256 메타데이터만 묶고 `WIND3.EXE`, 모든 `.exe`, `.zip`, DLL 파일 본문은 제외합니다.
-- `세이브 검사`, `세이브 복구`, `백업 되돌리기` 기능을 추가했습니다. 세이브 복구는 백업이 아니라 현재 세이브를 현 버전 형식에 맞춰 검증 후 동기화합니다.
-- 이미 `beta-20260609-v1`을 받은 경우 이번 ZIP으로 한 번 갱신하는 것을 권장합니다.
+- 배포 런처의 `게임 실행 / 화면`, `지원 / 업데이트` 영역 버튼 간격과 여백을 정리해, 일부 버튼이 그룹 테두리에 닿던 부분을 다듬었습니다.
+- 런타임에 표시되는 일부 텍스트(월드맵 지명, 세이브 제목 등)의 처리 방식을 정리해 이후 번역 갱신이 더 매끄럽게 반영되도록 했습니다. 사용자 화면의 동작과 텍스트는 이전과 동일합니다.
+- 이미 `beta-20260609-v2`를 사용 중이라면 이번 ZIP으로 한 번 갱신하는 것을 권장합니다.
 
 ## 사용 방법
 
-1. `wind3-korean-patch-beta-20260609-v2.zip`을 다운로드합니다.
+1. `wind3-korean-patch-20260615-v1-release.zip`을 다운로드합니다.
 2. 원하는 위치에 압축을 풉니다.
 3. 압축을 푼 폴더에서 `Wind3 Korean Patch Launcher.exe`를 실행합니다.
 4. 런처에서 `WIND3.EXE`가 있는 Wind Fantasy 3 설치 폴더를 선택합니다.
