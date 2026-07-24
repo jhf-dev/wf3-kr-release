@@ -83,6 +83,8 @@ GitHub Release 제목/name은 반드시 버전명만 사용합니다. 제품명,
 - 본문은 가능하면 `2-4`줄로 씁니다.
 - 본문에 별도 헤딩을 만들지 않습니다.
 - 본문 bullet 사이에 빈 줄을 넣지 않습니다. 빈 줄은 Git의 제목/본문 구분선 하나만 둡니다.
+- 검증된 semantic unit은 즉시 커밋합니다. unrelated work, handoff, context compaction, final reporting 전에 완료 단위를 작업 트리에 남기지 않습니다.
+- blocked 또는 incomplete unit은 커밋하지 않고, 명시적으로 기록만 남겨 다음 verification gate까지 유지합니다.
 - `hotfix`, `release update`, `notes fix`처럼 모호하거나 영어로 된 제목은 피합니다.
 
 ## 검증 정책
@@ -96,6 +98,8 @@ GitHub Release 제목/name은 반드시 버전명만 사용합니다. 제품명,
 - latest 여부
 - asset 이름
 - asset SHA-256
+
+최종 상태 보고 전에는 completed unit의 staged/unstaged 변경을 함께 확인하고, blocked/incomplete unit은 uncommitted 상태로 분리해 둡니다.
 
 로컬 ZIP을 만들었다는 사실만으로 공개 release 상태를 확정해서 말하지 않습니다.
 
