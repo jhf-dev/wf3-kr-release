@@ -7,4 +7,5 @@
 .githooks/* text eol=lf
 .github/workflows/*.yml text eol=lf
 .release/*.py text eol=lf
+.release/*.json text eol=lf
 *.zip binary

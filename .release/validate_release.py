@@ -155,8 +155,15 @@ def clean_line(value: Any, label: str) -> str:
 def validate_control_inventory(root: Path) -> None:
     workflow_root = root / ".github" / "workflows"
     hook_root = root / ".githooks"
+    attributes_path = root / ".gitattributes"
     require(workflow_root.is_dir(), "trusted workflow directory is missing")
     require(hook_root.is_dir(), "tracked hook directory is missing")
+    require(attributes_path.is_file(), ".gitattributes is missing")
+    attributes = set(attributes_path.read_text(encoding="utf-8").splitlines())
+    require(
+        ".release/*.json text eol=lf" in attributes,
+        "release JSON must be checked out with LF for byte-stable policy hashes",
+    )
     workflows = {
         path.name
         for path in workflow_root.iterdir()
