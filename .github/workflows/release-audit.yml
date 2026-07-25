@@ -1,0 +1,46 @@
+name: release-audit
+
+on:
+  release:
+    types:
+      - published
+      - edited
+      - deleted
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-audit-${{ github.event.release.id }}
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    name: audit
+    runs-on: windows-latest
+    steps:
+      - name: Check out trusted auditor
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: trusted
+          persist-credentials: false
+      - name: Check out released tag
+        if: github.event.action != 'deleted'
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          path: candidate
+          persist-credentials: false
+      - name: Reject deletion
+        if: github.event.action == 'deleted'
+        shell: pwsh
+        run: throw "Published release deletion is break-glass only."
+      - name: Validate committed candidate
+        if: github.event.action != 'deleted'
+        shell: pwsh
+        env:
+          WIND3_SOURCE_AUDIT_TOKEN: ${{ secrets.WIND3_SOURCE_AUDIT_TOKEN }}
+        run: |
+          python trusted/.release/validate_release.py --root candidate
+          python trusted/.release/audit_remote.py --candidate-root candidate --trusted-root trusted

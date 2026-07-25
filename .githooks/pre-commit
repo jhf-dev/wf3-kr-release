@@ -1,0 +1,10 @@
+#!/bin/sh
+if ! git diff --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+  echo "release pre-commit rejected: stage every release-repository change before validation" >&2
+  exit 2
+fi
+PYTHON_BIN="$(git config --get wind3.python)"
+if [ -z "$PYTHON_BIN" ]; then
+  PYTHON_BIN=python
+fi
+exec "$PYTHON_BIN" .release/validate_release.py --root . --check-git-identity

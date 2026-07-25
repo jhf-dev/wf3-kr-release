@@ -1,0 +1,73 @@
+name: release-contract-base
+
+on:
+  pull_request_target:
+
+permissions:
+  contents: read
+  statuses: write
+
+concurrency:
+  group: release-contract-base-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  trusted-base-policy-runner:
+    name: trusted-base-policy-runner
+    runs-on: windows-latest
+    steps:
+      - name: Check out trusted base policy
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: trusted
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Check out untrusted candidate without credentials
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: candidate
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Require the dedicated release account
+        shell: pwsh
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          if ("${env:PR_AUTHOR}" -ne "jhf-dev") {
+            throw "Release pull requests must be opened by jhf-dev."
+          }
+      - name: Validate candidate with trusted base script
+        shell: pwsh
+        run: >
+          python trusted/.release/validate_release.py
+          --root candidate
+          --trusted-root trusted
+      - name: Publish exact PR-head base-policy status
+        if: always()
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          $state = if ($env:JOB_STATUS -eq "success") { "success" } else { "failure" }
+          $body = @{
+            state = $state
+            context = "base-policy"
+            description = "Trusted default-branch policy validation"
+            target_url = "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          } | ConvertTo-Json
+          $headers = @{
+            Accept = "application/vnd.github+json"
+            Authorization = "Bearer $env:GH_TOKEN"
+            "X-GitHub-Api-Version" = "2026-03-10"
+          }
+          Invoke-RestMethod `
+            -Method Post `
+            -Headers $headers `
+            -ContentType "application/json" `
+            -Body $body `
+            -Uri "${{ github.api_url }}/repos/${{ github.repository }}/statuses/$env:PR_HEAD_SHA"
