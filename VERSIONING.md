@@ -46,6 +46,37 @@ GitHub Release 제목/name은 반드시 버전명만 사용합니다. 제품명,
 - 안정화 release를 올릴 때 같은 테스트 주기의 pre-release는 draft로 전환해 비공개 처리합니다.
 - 같은 base version의 pre-release와 release는 동일한 변경 단위를 가리킵니다. 안정화 과정에서 배포물이 바뀌면 새 base version을 만듭니다.
 
+## 강제 publication 순서
+
+모든 새 배포는 아래 순서를 반드시 지킵니다.
+
+1. Stage 5 package와 Stage 6 clean/temp 검증을 완료합니다.
+2. GitHub Release를 `draft=true`로 생성하고 자산을 업로드합니다.
+3. draft의 tag/name, 자산 이름·크기·digest가 Stage 6 결과와 일치하는지
+   확인합니다.
+4. 일치한 draft만 `prerelease=true`, `draft=false`로 승격합니다.
+5. 공개된 pre-release ZIP을 GitHub에서 새로운 경로로 다시 다운로드합니다.
+6. 다운로드본으로 격리된 clean 설치를 만들고 package gate와 실제 기능
+   테스트를 수행합니다. repo live 폴더나 업로드 전 ZIP 테스트는 이 단계를
+   대신할 수 없습니다.
+7. 다운로드본의 SHA-256, 격리 설치 경로, 기능 proof를 기록하고 사용자가
+   stable 승격을 별도로 승인한 경우에만 release/latest로 승격합니다.
+
+다음 동작은 금지합니다.
+
+- 새 Release를 처음부터 pre-release 또는 stable/latest로 공개
+- draft에서 stable로 직행
+- pre-release 원격 ZIP 재다운로드·격리 테스트 없이 stable 승격
+- 로컬 live, `analysis_out`, 업로드 전 ZIP proof를 원격 후보 proof로 대체
+- release publication guard를 거치지 않은 `gh release` 또는 브라우저 수정
+- 브라우저 UI, Computer Use, 네이티브 파일 선택창 자동화로 GitHub Release
+  생성·자산 업로드·상태 변경·회수
+
+전이 전에는 `python -m tooling.release.publication_guard check`를 실행합니다.
+원격 변경은 release-owner 자격증명을 쓰는 GitHub API/CLI로만 수행합니다.
+guard receipt와 같은 계정의 API로 다시 읽은 원격 postcondition은 release
+handoff에 함께 남깁니다.
+
 ## 릴리즈 노트 정책
 
 - pre-release 릴리즈 노트에는 직전 버전 대비 변경사항만 적습니다.
@@ -83,6 +114,8 @@ GitHub Release 제목/name은 반드시 버전명만 사용합니다. 제품명,
 - 본문은 가능하면 `2-4`줄로 씁니다.
 - 본문에 별도 헤딩을 만들지 않습니다.
 - 본문 bullet 사이에 빈 줄을 넣지 않습니다. 빈 줄은 Git의 제목/본문 구분선 하나만 둡니다.
+- 검증된 semantic unit은 즉시 커밋합니다. unrelated work, handoff, context compaction, final reporting 전에 완료 단위를 작업 트리에 남기지 않습니다.
+- blocked 또는 incomplete unit은 커밋하지 않고, 명시적으로 기록만 남겨 다음 verification gate까지 유지합니다.
 - `hotfix`, `release update`, `notes fix`처럼 모호하거나 영어로 된 제목은 피합니다.
 
 ## 검증 정책
@@ -96,6 +129,16 @@ GitHub Release 제목/name은 반드시 버전명만 사용합니다. 제품명,
 - latest 여부
 - asset 이름
 - asset SHA-256
+
+stable을 보고하기 전에는 추가로 다음을 확인합니다.
+
+- 같은 base version의 pre-release가 먼저 공개됐는지
+- 검증 ZIP이 로컬 원본이 아니라 GitHub 재다운로드본인지
+- 재다운로드본 SHA-256과 원격 digest가 일치하는지
+- 재다운로드본 clean/temp gate와 격리 runtime/user proof가 있는지
+- stable/latest 승격에 대한 별도 사용자 승인이 있는지
+
+최종 상태 보고 전에는 completed unit의 staged/unstaged 변경을 함께 확인하고, blocked/incomplete unit은 uncommitted 상태로 분리해 둡니다.
 
 로컬 ZIP을 만들었다는 사실만으로 공개 release 상태를 확정해서 말하지 않습니다.
 
