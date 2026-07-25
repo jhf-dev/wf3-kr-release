@@ -1039,6 +1039,16 @@ def validate_git_identity(root: Path) -> None:
         remote == "https://jhf-dev@github.com/jhf-dev/wf3-kr-release.git",
         "wrong release origin or credential namespace",
     )
+    require(
+        git_output(
+            root,
+            "config",
+            "--get",
+            "credential.https://github.com.username",
+        )
+        == "jhf-dev",
+        "wrong release Git credential namespace",
+    )
 
 
 def validate_commit_range(root: Path, base_ref: str) -> None:
