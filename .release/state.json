@@ -1,0 +1,38 @@
+{
+  "schema": "wind3-release-repository-state-v1",
+  "mode": "grandfathered-read-only",
+  "policy_sha256": "5E3A64FB44B854CC01624A0F9D72D1FA3743017288423F71F834271087F2D444",
+  "github_settings_sha256": "0E87A78AD8234F811731169A77B95378EC310177F2A42F17898861967A3F41F9",
+  "source_github_settings_sha256": "D706C8B17E19339F43586766EDDF69C142D38AE50C120C4238ECE78F6FE328E9",
+  "reason": "20260725-v2 was published before machine-enforced governance. Its exact bytes are pinned only so governance can bootstrap; it is not promoted to a compliant candidate.",
+  "grandfathered_release": {
+    "version": "20260725-v2",
+    "release_id": 359660763,
+    "tag_target_commit": "65A9511E672157C20077B76C03C3238D053DF936",
+    "draft": false,
+    "prerelease": true,
+    "immutable": false,
+    "asset_name": "wind3-korean-patch-20260725-v2.zip",
+    "asset_size": 25540269,
+    "asset_sha256": "CB56B04BBFA7F193AAB760455BE7965EB1E013F0E65D34C56960D4F1488D7534",
+    "remote_body_sha256": "DB6A87A64A4EDF94C542C0E32740216EE0754971EE67DE3D170CF95FD6536185",
+    "pinned_files": {
+      "RELEASE_NOTES.md": "DB6A87A64A4EDF94C542C0E32740216EE0754971EE67DE3D170CF95FD6536185",
+      "README.md": "38BEC7D2275FFCBE0B9CC7A40CBC1EFC3A746ECB89587107C9DD5177F97D55EE",
+      "SHA256SUMS.txt": "299CDAFDF135CD82315476ED39BD3B7295988DBE16B0934896EF1234CB70BE98",
+      "wind3-korean-patch-20260725-v2.zip": "CB56B04BBFA7F193AAB760455BE7965EB1E013F0E65D34C56960D4F1488D7534"
+    },
+    "known_noncompliance": [
+      "published release is mutable because immutability was disabled at publication time",
+      "public notes contain a development-only XLSX claim",
+      "tag commit and later notes commit are different"
+    ]
+  },
+  "next_candidate_requirements": {
+    "candidate_path": ".release/candidate.json",
+    "minimum_replacement_version": "20260725-v3",
+    "must_replace_grandfathered_mode": true,
+    "must_start_from_new_draft": true,
+    "in_place_v2_edit_forbidden": true
+  }
+}

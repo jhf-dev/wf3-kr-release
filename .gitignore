@@ -12,6 +12,9 @@ desktop.ini
 *.temp
 *.bak
 *.orig
+__pycache__/
+*.py[cod]
+.release-receipts/
 
 # Local extraction or staging folders
 extracted/
