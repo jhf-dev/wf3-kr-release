@@ -5,4 +5,5 @@
 .gitattributes text eol=lf
 .gitignore text eol=lf
 .release/*.json text eol=lf
+.release/proofs/*.json text eol=lf
 *.zip binary
