@@ -25,3 +25,6 @@ staging/
 
 # Keep release artifacts tracked intentionally.
 !wind3-korean-patch-*.zip
+
+# Local release authorization and readback receipts
+.release-receipts/
