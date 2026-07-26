@@ -1,10 +1,10 @@
-# 릴리즈 노트 (20260726-v2)
+# 릴리즈 노트 (20260726-v3)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-20260726-v2.zip`
-- SHA-256: `2856E854D5B7AAA2B7709599EF1A02FE72ED9E26E39C94D3BDD7EC2ABCC0E152`
-- 파일 크기: `25539956` bytes
+- 배포 파일: `wind3-korean-patch-20260726-v3.zip`
+- SHA-256: `99BBC9895792A442240FD218344938F6227D09B0AC744E9706A11F984557EBF4`
+- 파일 크기: `25539961` bytes
 - 채널: pre-release
 
 ## 20260702-v1-release 대비 주요 변경사항
