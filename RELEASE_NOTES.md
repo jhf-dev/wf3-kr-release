@@ -1,10 +1,10 @@
-# 릴리즈 노트 (20260809-v5)
+# 릴리즈 노트 (20260809-v6)
 
 ## 다운로드
 
-- 배포 파일: `wind3-korean-patch-20260809-v5.zip`
-- SHA-256: `B61DA91A5E7B15A0BED60F717CCCDA04AB499432DC0F397005F8B855D4A53AB4`
-- 파일 크기: `53133370` bytes
+- 배포 파일: `wind3-korean-patch-20260809-v6.zip`
+- SHA-256: `06A12956EA081B79C2F2BF8ECB3B41B7AEDB60C608C8784FF949007D57887285`
+- 파일 크기: `53133418` bytes
 - 채널: pre-release
 
 ## 20260702-v1-release 대비 주요 변경사항

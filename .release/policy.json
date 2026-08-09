@@ -17,7 +17,8 @@
     "stable_pattern": "^[0-9]{8}-v[1-9][0-9]*-release$",
     "asset_template": "wind3-korean-patch-{version}.zip",
     "stable_suffix": "-release",
-    "packaged_artifact_uses_prerelease_base_version": true,
+    "packaged_artifact_uses_prerelease_base_version": false,
+    "stable_build_required": true,
     "reused_version_forbidden": true,
     "semantic_change_requires_new_version": true
   },
