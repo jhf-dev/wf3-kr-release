@@ -6,10 +6,10 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 
 ## 다운로드
 
-- 검증 중인 pre-release: `20260809-v5`
-- 배포 파일: `wind3-korean-patch-20260809-v5.zip`
-- SHA-256: `B61DA91A5E7B15A0BED60F717CCCDA04AB499432DC0F397005F8B855D4A53AB4`
-- 파일 크기: `53,133,370` bytes
+- 검증 중인 pre-release: `20260809-v6`
+- 배포 파일: `wind3-korean-patch-20260809-v6.zip`
+- SHA-256: `06A12956EA081B79C2F2BF8ECB3B41B7AEDB60C608C8784FF949007D57887285`
+- 파일 크기: `53,133,418` bytes
 - 체크섬 파일: `SHA256SUMS.txt`
 - 주요 변경사항: [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - 버전명 정책: [VERSIONING.md](VERSIONING.md)
@@ -18,7 +18,7 @@ Wind Fantasy 3 한국어 패치 배포용 저장소입니다.
 
 ## 사용 방법
 
-1. `wind3-korean-patch-20260809-v5.zip`을 다운로드합니다.
+1. `wind3-korean-patch-20260809-v6.zip`을 다운로드합니다.
 2. 원하는 위치에 압축을 풉니다.
 3. `Wind3 Korean Patch Launcher.exe`를 실행합니다.
 4. `WIND3.EXE`가 있는 게임 폴더를 선택하고 `패치 적용`을 실행합니다.
