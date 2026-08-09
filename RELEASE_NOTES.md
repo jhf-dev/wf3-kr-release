@@ -1,6 +1,11 @@
 # 릴리즈 노트 (20260809-v8-release)
 
-> 다운로드 정보는 최종 빌드 승인 후 확정됩니다.
+## 다운로드
+
+- 배포 파일: `wind3-korean-patch-20260809-v8-release.zip`
+- SHA-256: `39EE2A0DFFDD14423D8DC5CF91DF2F48390B87FE9D95F758CD527AF33BE3F69A`
+- 파일 크기: `53133390` bytes
+- 채널: release
 
 ## 20260702-v1-release 대비 주요 변경사항
 
