@@ -1,6 +1,11 @@
 # 릴리즈 노트 (20260810-v7)
 
-> 다운로드 정보는 최종 빌드 승인 후 확정됩니다.
+## 다운로드
+
+- 배포 파일: `wind3-korean-patch-20260810-v7.zip`
+- SHA-256: `762A30CAB4FC630824E4A87FC23DD3BE2D362FE844D7FD0C045D2F69EB7ED6BE`
+- 파일 크기: `53132991` bytes
+- 채널: pre-release
 
 ## 20260810-v3-release 대비 주요 변경사항
 
