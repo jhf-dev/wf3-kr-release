@@ -1,6 +1,11 @@
 # 릴리즈 노트 (20260810-v10-release)
 
-> 다운로드 정보는 최종 빌드 승인 후 확정됩니다.
+## 다운로드
+
+- 배포 파일: `wind3-korean-patch-20260810-v10-release.zip`
+- SHA-256: `706DEE79C95AEC1D267AFF41210CA3C6CA81FFF7546D0C107C50C32C415F74A9`
+- 파일 크기: `53133076` bytes
+- 채널: release
 
 ## 20260810-v3-release 대비 주요 변경사항
 
