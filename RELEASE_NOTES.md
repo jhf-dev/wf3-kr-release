@@ -1,5 +1,12 @@
 # 릴리즈 노트 (20260812-v5-release)
 
+## 다운로드
+
+- 배포 파일: `wind3-korean-patch-20260812-v5-release.zip`
+- SHA-256: `EAC8E9D073E5F87CB34586C5D18C9CC08F59218FD836AD97AF13BC8403EFE52D`
+- 파일 크기: `26791462` bytes
+- 채널: release
+
 ## 20260810-v10-release 대비 주요 변경사항
 
 ### 세이브 관리 안정화
