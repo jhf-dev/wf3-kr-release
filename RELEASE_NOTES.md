@@ -1,6 +1,11 @@
 # 릴리즈 노트 (20260817-v1-release)
 
-> 다운로드 정보는 최종 빌드 승인 후 확정됩니다.
+## 다운로드
+
+- 배포 파일: `wind3-korean-patch-20260817-v1-release.zip`
+- SHA-256: `7D336B3B3465ADBAEFBD2B66C930A6125B7A207875C1F6D3DF2B2FF7048A287F`
+- 파일 크기: `28031896` bytes
+- 채널: release
 
 ## 20260812-v5-release 대비 주요 변경사항
 
